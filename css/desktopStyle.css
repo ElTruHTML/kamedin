@@ -3,6 +3,11 @@
     --secon: #1a232f;
     --tert1: #AD6B35;
     --tert2: #a35c32;
+
+    /* candidates for further colors: */
+    --quad: #18223f;
+    --quad2: #333a44;
+    --quad3: #333a44;
 }
 *, *::before, *::after {
     padding: 0;
@@ -120,4 +125,14 @@ header {
     position: absolute;
     bottom: 0;
     right: 0;
+}
+#initial-info {
+    color: #ddd;
+    letter-spacing: .2rem;
+    display: inline-block;
+    position: absolute;
+    bottom: 5%;
+    right: -10%;
+    opacity: 0;
+    transition: opacity .5s ease-out;
 }
