@@ -1,0 +1,72 @@
+:root {
+    --prim: #131312;
+    --secon2: #19437D;
+    --secon2: #1a232f;
+    --tert1: #AD6B35;
+    --tert2: #a35c32;
+    --tert3: #F4D478;
+}
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ebrima" , sans-serif;
+}
+body {
+    width: 100vw;
+}
+
+header {
+    /* background: var(--prim); */
+    background-image: radial-gradient(var(--secon2), var(--prim));
+    background-size: 100%;
+    background-position: 80%;
+    position: relative;
+    height: 90vh;
+    min-height: 1200px;
+    overflow: hidden;
+}
+#header-headlines {
+    position: relative;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 70%;
+}
+#header-headlines h1 {
+    font-size: 8rem;
+    color: #ddd;
+}
+#header-headlines h1:first-child {
+    font-size: 10rem;
+    text-decoration: overline;
+}
+#changing-headline {
+    color: var(--tert1);
+}
+#header-picture-wrapper {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+}
+.sub-wrapper-relative {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#header-circle-frame {
+    transform: translate(15%, 10%);
+    width: 1200px;
+    height: 1200px;
+    border: 2px solid var(--prim);
+    outline: 50px solid var(--tert1);
+    outline-offset: 0;
+    border-radius: 50%;
+    background-image: radial-gradient(rgba(0,0,0,0), var(--tert1) 400%);
+}
+#pic-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
