@@ -18,9 +18,9 @@ body {
 
 header {
     /* background: var(--prim); */
-    background-image: radial-gradient(var(--secon2), var(--prim));
-    background-size: 100%;
-    background-position: 80%;
+    background-image: radial-gradient(at 90% 90%, var(--secon2), var(--prim));
+    /* background-size: 100%;
+    background-position: 80%; */
     position: relative;
     height: 90vh;
     min-height: 1200px;
