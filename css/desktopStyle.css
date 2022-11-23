@@ -1,10 +1,8 @@
 :root {
     --prim: #131312;
-    --secon: #19437D;
-    --secon2: #1a232f;
+    --secon: #1a232f;
     --tert1: #AD6B35;
     --tert2: #a35c32;
-    --tert3: #F4D478;
 }
 *, *::before, *::after {
     padding: 0;
@@ -17,14 +15,14 @@
     background-color: var(--tert2);
 }
 html {
-    background-color: var(--secon2);
+    background-color: var(--secon);
 }
 body {
     width: 100vw;
 }
 
 header {
-    background-image: radial-gradient(at 80% 80%, var(--secon2), var(--prim));
+    background-image: radial-gradient(at 80% 80%, var(--secon), var(--prim));
     position: relative;
     height: 90vh;
     min-height: 500px;
