@@ -1,6 +1,6 @@
 :root {
     --prim: #131312;
-    --secon2: #19437D;
+    --secon: #19437D;
     --secon2: #1a232f;
     --tert1: #AD6B35;
     --tert2: #a35c32;
@@ -11,16 +11,20 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Ebrima" , sans-serif;
+    outline-offset: 0;
+}
+::selection {
+    background-color: var(--tert3);
+}
+html {
+    background-color: var(--secon2);
 }
 body {
     width: 100vw;
 }
 
 header {
-    /* background: var(--prim); */
-    background-image: radial-gradient(at 90% 90%, var(--secon2), var(--prim));
-    /* background-size: 100%;
-    background-position: 80%; */
+    background-image: radial-gradient(at 80% 80%, var(--secon2), var(--prim));
     position: relative;
     height: 90vh;
     min-height: 1200px;
@@ -41,6 +45,7 @@ header {
 #header-headlines h1:first-child {
     font-size: 10rem;
     text-decoration: overline;
+    letter-spacing: 1rem;
 }
 #changing-headline {
     color: var(--tert1);
@@ -48,7 +53,7 @@ header {
 #header-picture-wrapper {
     position: absolute;
     right: 10%;
-    bottom: 0;
+    bottom: -5%;
 }
 .sub-wrapper-relative {
     width: 100%;
@@ -56,14 +61,23 @@ header {
     position: relative;
 }
 #header-circle-frame {
-    transform: translate(15%, 10%);
-    width: 1200px;
-    height: 1200px;
+    transform: translate(17%, 10%);
+    width: 1250px;
+    height: 1250px;
     border: 2px solid var(--prim);
     outline: 50px solid var(--tert1);
-    outline-offset: 0;
     border-radius: 50%;
-    background-image: radial-gradient(rgba(0,0,0,0), var(--tert1) 400%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#circle-frame-content {
+    width: 100%;
+    height: 100%;
+    border: 20px solid var(--tert1);
+    background-image: radial-gradient(circle at center, rgba(0,0,0,0) 60%, var(--tert1));
+    border-radius: 50%;
 }
 #pic-wrapper {
     position: absolute;
