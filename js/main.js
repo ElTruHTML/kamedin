@@ -1,7 +1,6 @@
 "use strict";
 
 let headlines = document.querySelectorAll("#header-headlines h1");
-
 for(let i = 0 ; i < headlines.length ; i++)
 {
     switch(i)
@@ -50,3 +49,8 @@ let qmark = document.getElementById("qMark");
 setTimeout(() => {
     qmark.style.opacity = "1";
 }, 1600);
+
+let iInfo = document.getElementById("initial-info");
+setTimeout(() => {
+    iInfo.style.opacity = "1";
+}, 300);
