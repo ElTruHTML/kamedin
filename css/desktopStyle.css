@@ -176,6 +176,7 @@ a:hover svg {
 a:focus {
     letter-spacing: 2px;
     outline: none;
+    
 }
 a:focus svg {
     transform: translateY(1px) scale(1.5);
