@@ -2,7 +2,9 @@
     --prim: #131312;
     --secon: #1a232f;
     --tert1: #AD6B35;
-    --tert2: #a35c32;
+    --textSelection: #a35c32;
+    --headline-gradients: linear-gradient(to bottom, #ddd 30%, #666);
+    --textColor: #999;
 
     /* candidates for further colors: */
     --quad: #18223f;
@@ -13,20 +15,29 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Ebrima" , sans-serif;
     outline-offset: 0;
-    color: #ddd;
+    color: var(--textColor);
 }
 ::selection {
-    background-color: var(--tert2);
+    background-color: var(--textSelection);
+    color: #ddd;
 }
 html {
     background-color: var(--prim);
+    scroll-behavior: smooth;
 }
 body {
     width: 100vw;
+    font-family: "Ebrima", sans-serif;
 }
-
+.headline-gradients {
+    background-image: var(--headline-gradients);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#last-headline {
+    display: inline;
+}
 header {
     background-image: radial-gradient(at 80% 80%, var(--secon), var(--prim));
     position: relative;
@@ -69,11 +80,13 @@ header {
     transform: translateX(-100px);
 }
 .orange-words {
-    color: var(--tert1);
+    color: var(--tert1) !important;
+    background-image: none !important;
     font-weight: bold;
 }
 .changing-headline {
     display: inline-block;
+    font-size: clamp(60px, 6vmax, 70px);
     transition: transform .5s linear;
     transform: translateY(0);
     animation: wordChanger .8s linear .6s 2;
@@ -81,11 +94,11 @@ header {
 #qMark {
     opacity: 0;
     transition: opacity .5s ease-in;
+    font-size: clamp(60px, 6vmax, 70px);
 }
 #header-picture-wrapper {
     position: absolute;
     height: 100%;
-    /* width: clamp(380px, 30%, 450px); */
     width: 50%;
     right: 0;
     bottom: 0;
@@ -136,6 +149,10 @@ header {
 }
 nav {
     height: 10vh;
+    background-color: var(--prim);
+    position: sticky;
+    top: 0;
+    z-index: 5;
 }
 nav ul {
     width: 100%;
@@ -147,7 +164,6 @@ nav ul {
     gap: 3%;
 }
 nav ul li a{
-    background-color: var(--prim);
     border-bottom: 1px solid var(--tert1);
     border-radius: 1rem;
     text-decoration: none;
@@ -158,14 +174,18 @@ nav ul li a{
     min-width: 170px;
     min-height: 30px;
     letter-spacing: 0;
-    transition: letter-spacing .2s linear;
+    transition: letter-spacing .2s linear,
+                color .3s linear;
 }
-svg {
+nav ul li a svg {
     transform: translateY(1px) scale(1);
-    fill: #ddd;
+    fill: var(--textColor);
     font-size: 1.2rem;
     margin-right: 5%;
-    transition: transform .2s linear;
+    transition: transform .2s linear,
+                fill .3s linear,
+                stroke .3s linear;
+    pointer-events: none;
 }
 a:hover {
     letter-spacing: 2px;
@@ -176,39 +196,62 @@ a:hover svg {
 a:focus {
     letter-spacing: 2px;
     outline: none;
-    
+
 }
 a:focus svg {
     transform: translateY(1px) scale(1.5);
 }
+.activeLink {
+    color: var(--tert1);
+}
+.container {
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+}
 section.container {
     width: 100%;
-    display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-family: "Raleway" !important;
+    margin-bottom: 100px;
+    scroll-margin-top: 150px;
+}
+#how-i-work {
+    scroll-margin-top: 150px;
+    margin-bottom: 200px;
 }
 main {
     padding-top: 150px;
-}
-.picture-3d-wrapper {
-    width:30%;
-    height: 400px;
-    background: var(--secon);
-    border-radius: .2rem;
-    margin: 0 auto;
+    font-family: "Raleway" !important;
 }
 .card {
     width: 60%;
     border-top-left-radius: .2rem;
     border-bottom-left-radius: .2rem;
     background-color: var(--secon);
+    padding-bottom: 50px;
+    box-shadow: -5px 5px 10px rgba(173, 107, 53, .5);
+    font-size: 1.3rem;
 }
 .card-headline {
+    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     min-height: 100px;
     padding-left: 50px;
+    font-size: 1rem;
+}
+.card-headline::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 70%;
+    background-color: var(--tert1);
 }
 .card-headline h1 {
     width: 100%;
@@ -216,7 +259,152 @@ main {
 .card-headline svg {
     margin-right: 3%;
     font-size: 4rem;
+    fill: var(--textColor);
 }
 .card-body {
-    padding-left: 50px;
+    padding: 0 25px 0 50px;
+    line-height: 2;
+}
+.picture-3d-wrapper {
+    width:30%;
+    height: 400px;
+    border-radius: .2rem;
+    margin: 0 auto;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+#pic-3d-who-am-i img{
+    width: 70%;
+    position: absolute;
+    top: -35%;
+    left: 20%;
+    transform: rotateY(5deg) translateY(0);
+    animation: hoverMe 3s linear infinite;
+    border-radius: 50%;
+}
+@keyframes hoverMe {
+    0% {
+        transform: rotateY(5deg) translateY(0);
+    }
+    50% {
+        transform: rotateY(10deg) translateY(1%);
+    }
+    100% {
+        transform: rotateY(5deg) translateY(0);
+    }
+}
+#pic-3d-how-i-work img{
+    width: 150%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(50deg) translateY(0) translateX(-10%);
+    animation: hoverWork 3s linear infinite;
+}
+@keyframes hoverWork {
+    0% {
+        transform: rotateY(47deg) translateY(0) translateX(-10%);
+    }
+    50% {
+        transform: rotateY(45deg) translateY(2%) translateX(-10%);
+    }
+    100% {
+        transform: rotateY(47deg) translateY(0) translateX(-10%);
+    }
+}
+.card-body svg {
+    fill: var(--tert1);
+    transform: scale(1.5);
+}
+.card-body li {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#planning-phase {
+    scroll-margin-top: 200px;
+}
+#planning-phase .card {
+    min-height: 700px;
+}
+#planning-phase-sidebar {
+    border: 1px dashed yellow;
+    width: 40%;
+    min-height: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.sidebar-card-container {
+    border: 1px solid green;
+    width: 30%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    pointer-events: none;
+
+}
+.sidebar-card {
+    width: 90%;
+    min-height: 285px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    pointer-events: auto;
+    cursor: pointer;
+}
+.sidebar-background {
+    filter: blur(2px);
+    pointer-events: none;
+    width: 100%;
+    min-height: 285px;
+    background-color: white;
+    background-image: url("../img/me/section_howIWork/sidebarIcons/sidebar-background-code-snippet.png");
+    background-repeat: no-repeat;
+    transition: transform .2s linear, filter .2s linear;
+}
+.sidebar-card:hover .sidebar-background {
+    filter: blur(0);
+}
+/* .sidebar-card */
+.sidebar-card svg {
+    display: inline;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -85%);
+    width: 80%;
+    height: 100px;
+    transition: transform .2s linear;
+}
+.sidebar-card p {
+    display: inline;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 150%);
+    font-size: 2rem;
+    transition: transform .2s linear;
+}
+
+#planning-phase .card {
+    position: relative;
+}
+#interactive-window {
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    width: 98%;
+    height: 85%;
+    border: 2px solid red;
 }
