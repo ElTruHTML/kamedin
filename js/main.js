@@ -1,5 +1,9 @@
 "use strict";
 
+
+import {InteractiveWindow} from "./classes/InteractiveWindow.js"; 
+let iWin = new InteractiveWindow();
+
 //Animations to fade the headlines in:
 let headlines = document.querySelectorAll("#header-headlines h1");
 for(let i = 0 ; i < headlines.length ; i++)
@@ -58,7 +62,6 @@ setTimeout(() => {
 
 //toggles the color of the links within the main nav:
 let allLinks = document.querySelectorAll("nav ul li a");
-console.log(allLinks);
 allLinks.forEach(l => {
     l.addEventListener("click" , e => {
         for(let i = 0 ; i < allLinks.length ; i ++)
@@ -96,16 +99,9 @@ let sidebars = document.querySelectorAll(".sidebar-card");
 //rotationY exists between 5 and 15deg
 sidebars.forEach(card => {
     card.addEventListener("mousemove", e => {
-        console.clear();
-        console.log(e.target.clientWidth);
-        console.log(e.offsetX);
         
         let halfOfWidthX = e.target.clientWidth / 2;
         let halfOfWidthY = e.target.clientHeight / 2;
-        let tenthOfWidthX = (halfOfWidthX / 10);
-        let tenthOfWidthY = (halfOfWidthY / 10);
-
-        console.clear();
         e.target.style.transform = `rotateY(${_computeXRotation(e.offsetX, e.target.clientWidth)}deg) rotateX(${_computeYRotation(e.offsetY, e.target.clientHeight)}deg)`;
         // if(e.offsetX > halfOfWidthX)
         // {
@@ -296,12 +292,8 @@ function _computeXRotation(e_offset, e_width) {
     let berechnungszahl;
 
         berechnungszahl = half - e_offset;
-        console.log("Breite des EL:", e_width);
-        console.log("MausPOS:", berechnungszahl);
-        console.log("Davon Prozent:", (berechnungszahl * 100) / half);
         
         deg = deg * (berechnungszahl / 100);
-        console.log("Davon DEG:", deg);
 
     return -deg;
 }
@@ -312,13 +304,13 @@ function _computeYRotation(e_offset, e_height) {
     let berechnungszahl;
 
     berechnungszahl = half - e_offset;
-console.clear();
-    console.log("MausPOS:", e_offset);
-    console.log("HEIGHT:", e_height);
 
     deg = deg * (berechnungszahl / 100);
 
-    console.log("DEG:", deg);
-
     return deg;
 }
+
+
+//set the eventListeners of sidebar-menues:
+
+iWin.setListeners();
