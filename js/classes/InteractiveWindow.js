@@ -27,14 +27,11 @@ export class InteractiveWindow {
             }, 710);
             //here comes the specific part of the clicked sidebar-item:
             this.iWindow.classList.add("iWin-layout");
-            if(document.getElementById("description-container") === null)
-            {
                 setTimeout(() => {
                     this._getLayoutDOM();
                     document.getElementById("description-container").style.opacity = "1";
                     document.getElementById("content-container").style.opacity = "1";
                 }, 1000);
-            }
         });
         this.sbItemColors.addEventListener("click" , () => {
             this._fadeOutCardText();
@@ -47,6 +44,12 @@ export class InteractiveWindow {
                 this._openIWIN();
             }, 710);
             //here comes the specific part of the clicked sidebar-item:
+            this.iWindow.classList.add("iWin-layout");
+                setTimeout(() => {
+                    this._getColorsDOM();
+                    document.getElementById("description-container").style.opacity = "1";
+                    document.getElementById("content-container").style.opacity = "1";
+                }, 1000);
         });
         this.sbItemResponsive.addEventListener("click" , () => {
             this._fadeOutCardText();
@@ -97,7 +100,79 @@ export class InteractiveWindow {
         this.iWindow.append(pCon);
         this.iWindow.append(cCon);
     }
+    _getColorsDOM() {
+        let pCon = document.createElement("div");
+        pCon.setAttribute("id", "description-container");
 
+            let p = document.createElement("p");
+            p.innerText = "Colors play a huge part in the way your visitors conceive your content!";
+
+        pCon.append(p);
+
+        let cCon = document.createElement("div");
+        cCon.setAttribute("id" , "content-container");
+
+            let cFrame = document.createElement("div");
+            cFrame.setAttribute("id", "colors-frame");
+            cFrame.classList.add("palette2prim");
+
+                let header = document.createElement("div");
+                header.setAttribute("id" , "cFrame-header");
+
+                let nav = document.createElement("div");
+                nav.setAttribute("id" , "cFrame-nav");
+                nav.classList.add("palette2second");
+                    let nav1 = document.createElement("div");
+                    nav1.setAttribute("id" , "cFrame-nav1");
+                    nav1.classList.add("cFrame-nav-items");
+                    nav1.classList.add("palette2links");
+                    nav1.innerText = "Link";
+                    let nav2 = document.createElement("div");
+                    nav2.setAttribute("id" , "cFrame-nav2");
+                    nav2.classList.add("cFrame-nav-items");
+                    nav2.classList.add("palette2links");
+                    nav2.innerText = "Link";
+                    let nav3 = document.createElement("div");
+                    nav3.setAttribute("id" , "cFrame-nav3");
+                    nav3.classList.add("cFrame-nav-items");
+                    nav3.classList.add("palette2links");
+                    nav3.innerText = "Link";
+                    let nav4 = document.createElement("div");
+                    nav4.setAttribute("id" , "cFrame-nav4");
+                    nav4.classList.add("cFrame-nav-items");
+                    nav4.classList.add("palette2links");
+                    nav4.innerText = "Link";
+                    let nav5 = document.createElement("div");
+                    nav5.setAttribute("id" , "cFrame-nav5");
+                    nav5.classList.add("cFrame-nav-items");
+                    nav5.classList.add("palette2links");
+                    nav5.innerText = "Link";
+                nav.append(nav1);
+                nav.append(nav2);
+                nav.append(nav3);
+                nav.append(nav4);
+                nav.append(nav5);
+
+                let main = document.createElement("div");
+                main.setAttribute("id" , "cFrame-main");
+                    let item1 = document.createElement("div");
+                    item1.classList.add("cFrame-main-items");
+                    item1.classList.add("palette2accent");
+                    let item2 = document.createElement("div");
+                    item2.classList.add("cFrame-main-items");
+                    item2.classList.add("palette2accent");
+                main.append(item1);
+                main.append(item2);
+
+            cFrame.append(header);
+            cFrame.append(nav);
+            cFrame.append(main);
+
+        cCon.append(cFrame);
+
+        this.iWindow.append(pCon);
+        this.iWindow.append(cCon);
+    }
 
 
 
