@@ -1,3 +1,5 @@
+
+/* changes the orange word in the header */
 @keyframes wordChanger {
     0% {
         transform: translateY(0);
@@ -18,5 +20,231 @@
     100% {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/* #planning-phase: layout window: toggles the positions of subframes */
+@keyframes lFrame-header {
+    0% {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 25%;
+    }
+    20% {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 25%;
+    }
+    25% {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 25%;
+    }
+    45% {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 25%;
+    }
+    50% {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 25%;
+    }
+    70% {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 25%;
+    }
+    75% {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 15%;
+    }
+    95% {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 15%;
+    }
+    100% {
+        top: 1%;
+        left: 1%;
+        width: 98%;
+        height: 25%;
+    }
+}
+@keyframes lFrame-nav1 {
+    0% {
+        bottom: 1%;
+        left: 1%;
+        width: 30%;
+        height: 72%;
+    }
+    20% {
+        bottom: 1%;
+        left: 1%;
+        width: 30%;
+        height: 72%;
+    }
+    25% {
+        bottom: 1%;
+        left: 1%;
+        width: 15%;
+        height: 72%;
+    }
+    45% {
+        bottom: 1%;
+        left: 1%;
+        width: 15%;
+        height: 72%;
+    }
+    50% {
+        bottom: 1%;
+        left: 1%;
+        width: 15%;
+        height: 72%;
+    }
+    70% {
+        bottom: 1%;
+        left: 1%;
+        width: 15%;
+        height: 72%;
+    }
+    75% {
+        bottom: 74%;
+        left: 1%;
+        width: 98%;
+        height: 9%;
+    }
+    95% {
+        bottom: 74%;
+        left: 1%;
+        width: 98%;
+        height: 9%;
+    }
+    100% {
+        bottom: 1%;
+        left: 1%;
+        width: 30%;
+        height: 72%;
+    }
+}
+@keyframes lFrame-nav2 {
+    0% {
+        bottom: 1%;
+        left: 1%;
+        width: 30%;
+        height: 72%;
+    }
+    20% {
+        bottom: 1%;
+        left: 1%;
+        width: 30%;
+        height: 72%;
+    }
+    25% {
+        bottom: 1%;
+        left: 84%;
+        width: 15%;
+        height: 72%;
+    }
+    45% {
+        bottom: 1%;
+        left: 84%;
+        width: 15%;
+        height: 72%;
+    }
+    50% {
+        bottom: 1%;
+        left: 84%;
+        width: 15%;
+        height: 72%;
+    }
+    70% {
+        bottom: 1%;
+        left: 84%;
+        width: 15%;
+        height: 72%;
+    }
+    75% {
+        bottom: 74%;
+        left: 1%;
+        width: 98%;
+        height: 9%;
+    }
+    95% {
+        bottom: 74%;
+        left: 1%;
+        width: 98%;
+        height: 9%;
+    }
+    100% {
+        bottom: 1%;
+        left: 1%;
+        width: 30%;
+        height: 72%;
+    }
+}
+@keyframes lFrame-main {
+    0% {
+        bottom: 1%;
+        right: 1%;
+        width: 67%;
+        height: 72%;
+    }
+    20% {
+        bottom: 1%;
+        right: 1%;
+        width: 67%;
+        height: 72%;
+    }
+    25% {
+        bottom: 1%;
+        right: 16.5%;
+        width: 67%;
+        height: 72%;
+    }
+    45% {
+        bottom: 1%;
+        right: 16.5%;
+        width: 67%;
+        height: 72%;
+    }
+    50% {
+        bottom: 1%;
+        right: 16.5%;
+        width: 67%;
+        height: 72%;
+    }
+    70% {
+        bottom: 1%;
+        right: 16.5%;
+        width: 67%;
+        height: 72%;
+    }
+    75% {
+        bottom: 1%;
+        right: 1%;
+        width: 98%;
+        height: 72%;
+    }
+    95% {
+        bottom: 1%;
+        right: 1%;
+        width: 98%;
+        height: 72%;
+    }
+    100% {
+        bottom: 1%;
+        right: 1%;
+        width: 67%;
+        height: 72%;
     }
 }
