@@ -11,7 +11,7 @@
     --palette1prim: #9b3b2e;
     --palette1second: #8a3429;
     --palette1shadow: #333;
-    --palette1links: #333;
+    --palette1links: rgb(146, 138, 138);
     --palette1accent: #8b7471;
     /* palette2 colors at #planning-phase: */
     --palette2prim: #265188;
@@ -19,6 +19,12 @@
     --palette2shadow: #999;
     --palette2links: rgb(31, 29, 29);
     --palette2accent: #516499;
+    /* palette2 colors at #planning-phase: */
+    --palette3prim: #26292c;
+    --palette3second: #99780b;
+    --palette3shadow: rgb(214, 226, 43);
+    --palette3links: rgb(21, 9, 22);
+    --palette3accent: #5f5124;
     /* candidates for further colors: */
     --quad: #18223f;
     --quad2: #333a44;
@@ -499,7 +505,7 @@ main {
     border: 2px solid var(--textColor);
     display: flex;
     flex-direction: column;
-    transition: all .3s ease-out;
+    animation: cFrame-bg 8s linear infinite;
 }
 #cFrame-header {
     width: 100%;
@@ -512,7 +518,7 @@ main {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    transition: all .3s ease-out;
+    animation: cFrame-nav 8s linear infinite;
 }
 .cFrame-nav-items {
     width: 10%;
@@ -522,7 +528,7 @@ main {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    transition: all .3s ease-out;
+    animation: cFrame-links 8s linear infinite;
 }
 #cFrame-main {
     width: 100%;
@@ -530,13 +536,12 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    transition: all .3s ease-out;
 }
 .cFrame-main-items {
     width: 30%;
     aspect-ratio: 4/3;
     border-radius: .5rem;
-    transition: all .3s ease-out;
+    animation: cFrame-items 8s linear infinite;
 }
 /* .palette1prim {
     background-color: var(--palette1prim);
@@ -554,7 +559,7 @@ main {
     background-color: var(--palette1accent)
     box-shadow: 5px 5px 10px -5px var(--palette1shadow);
 } */
-.palette2prim {
+/* .palette2prim {
     background-color: var(--palette2prim);
 }
 .palette2second {
@@ -569,4 +574,20 @@ main {
 .palette2accent {
     background-color: var(--palette2accent);
     box-shadow: 5px 5px 10px -5px var(--palette2shadow);
+} */
+/* .palette3prim {
+    background-color: var(--palette3prim);
 }
+.palette3second {
+    background-color: var(--palette3second);
+    box-shadow: 0 3px 10px -5px var(--palette3shadow);
+}
+.palette3links {
+    background-color: none;
+    border: 1px solid var(--palette3links);
+    color: var(--palette3links);
+} */
+/* .palette3accent {
+    background-color: var(--palette3accent);
+    box-shadow: 5px 5px 10px -5px var(--palette3shadow);
+} */

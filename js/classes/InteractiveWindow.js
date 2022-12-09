@@ -114,38 +114,38 @@ export class InteractiveWindow {
 
             let cFrame = document.createElement("div");
             cFrame.setAttribute("id", "colors-frame");
-            cFrame.classList.add("palette2prim");
+            cFrame.classList.add("palette3prim");
 
                 let header = document.createElement("div");
                 header.setAttribute("id" , "cFrame-header");
 
                 let nav = document.createElement("div");
                 nav.setAttribute("id" , "cFrame-nav");
-                nav.classList.add("palette2second");
+                nav.classList.add("palette3second");
                     let nav1 = document.createElement("div");
                     nav1.setAttribute("id" , "cFrame-nav1");
                     nav1.classList.add("cFrame-nav-items");
-                    nav1.classList.add("palette2links");
+                    nav1.classList.add("palette3links");
                     nav1.innerText = "Link";
                     let nav2 = document.createElement("div");
                     nav2.setAttribute("id" , "cFrame-nav2");
                     nav2.classList.add("cFrame-nav-items");
-                    nav2.classList.add("palette2links");
+                    nav2.classList.add("palette3links");
                     nav2.innerText = "Link";
                     let nav3 = document.createElement("div");
                     nav3.setAttribute("id" , "cFrame-nav3");
                     nav3.classList.add("cFrame-nav-items");
-                    nav3.classList.add("palette2links");
+                    nav3.classList.add("palette3links");
                     nav3.innerText = "Link";
                     let nav4 = document.createElement("div");
                     nav4.setAttribute("id" , "cFrame-nav4");
                     nav4.classList.add("cFrame-nav-items");
-                    nav4.classList.add("palette2links");
+                    nav4.classList.add("palette3links");
                     nav4.innerText = "Link";
                     let nav5 = document.createElement("div");
                     nav5.setAttribute("id" , "cFrame-nav5");
                     nav5.classList.add("cFrame-nav-items");
-                    nav5.classList.add("palette2links");
+                    nav5.classList.add("palette3links");
                     nav5.innerText = "Link";
                 nav.append(nav1);
                 nav.append(nav2);
@@ -157,10 +157,10 @@ export class InteractiveWindow {
                 main.setAttribute("id" , "cFrame-main");
                     let item1 = document.createElement("div");
                     item1.classList.add("cFrame-main-items");
-                    item1.classList.add("palette2accent");
+                    item1.classList.add("palette3accent");
                     let item2 = document.createElement("div");
                     item2.classList.add("cFrame-main-items");
-                    item2.classList.add("palette2accent");
+                    item2.classList.add("palette3accent");
                 main.append(item1);
                 main.append(item2);
 
@@ -169,6 +169,21 @@ export class InteractiveWindow {
             cFrame.append(main);
 
         cCon.append(cFrame);
+
+        this.iWindow.append(pCon);
+        this.iWindow.append(cCon);
+    }
+    _getResponsiveDOM() {
+        let pCon = document.createElement("div");
+        pCon.setAttribute("id", "description-container");
+
+            let p = document.createElement("p");
+            p.innerText = "Colors play a huge part in the way your visitors conceive your content!";
+
+        pCon.append(p);
+
+        let cCon = document.createElement("div");
+        cCon.setAttribute("id" , "content-container");
 
         this.iWindow.append(pCon);
         this.iWindow.append(cCon);
