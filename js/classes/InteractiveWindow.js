@@ -62,6 +62,12 @@ export class InteractiveWindow {
                 this._openIWIN();
             }, 710);
             //here comes the specific part of the clicked sidebar-item:
+            this.iWindow.classList.add("iWin-layout");
+                setTimeout(() => {
+                    this._getResponsiveDOM();
+                    document.getElementById("description-container").style.opacity = "1";
+                    document.getElementById("content-container").style.opacity = "1";
+                }, 1000);
         });
     }
     _getLayoutDOM() {
@@ -178,12 +184,17 @@ export class InteractiveWindow {
         pCon.setAttribute("id", "description-container");
 
             let p = document.createElement("p");
-            p.innerText = "Colors play a huge part in the way your visitors conceive your content!";
+            p.innerText = "Of course your site will look as you wish in EVERY device!";
 
         pCon.append(p);
 
         let cCon = document.createElement("div");
         cCon.setAttribute("id" , "content-container");
+
+            let rFrame = document.createElement("div");
+            rFrame.setAttribute("id", "responsive-frame");
+            
+        cCon.append(rFrame);
 
         this.iWindow.append(pCon);
         this.iWindow.append(cCon);
