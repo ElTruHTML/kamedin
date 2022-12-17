@@ -369,3 +369,73 @@
         box-shadow: 5px 5px 10px -5px var(--palette1shadow);
     }
 }
+
+@keyframes rFrame-desktop-img {
+    0% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic1-des.png");
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    40% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic1-des.png");
+        opacity: 1;
+    }
+    45% {
+        opacity: 0;
+    }
+    50% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic2-des.png");
+        opacity: 0;
+    }
+    55% {
+        opacity: 1;
+    }
+    80% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic2-des.png");
+        opacity: 1;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic1-des.png");
+        opacity: 0;
+    }
+}
+
+@keyframes rFrame-mobile-img {
+    0% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic1-mob.png");
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    40% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic1-mob.png");
+        opacity: 1;
+    }
+    45% {
+        opacity: 0;
+    }
+    50% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic2-mob.png");
+        opacity: 0;
+    }
+    55% {
+        opacity: 1;
+    }
+    80% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic2-mob.png");
+        opacity: 1;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        background-image: url("../../img/responsive-examples/planningPhase_responsive/pic1-mob.png");
+        opacity: 0;
+    }
+}

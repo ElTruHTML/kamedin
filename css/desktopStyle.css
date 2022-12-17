@@ -25,10 +25,6 @@
     --palette3shadow: rgb(214, 226, 43);
     --palette3links: rgb(21, 9, 22);
     --palette3accent: #5f5124;
-    --p1d: url("../../img/responsive-examples/planningPhase_responsive/pic1-desktop.png");
-    --p1m: url("../../img/responsive-examples/planningPhase_responsive/pic1-mobile.png");
-    --p2d: url("../../img/responsive-examples/planningPhase_responsive/pic2-desktop.png");
-    --p2m: url("../../img/responsive-examples/planningPhase_responsive/pic2-mobile.png");
     /* candidates for further colors: */
     --quad: #18223f;
     --quad2: #333a44;
@@ -390,12 +386,29 @@ main {
     width: 100%;
     min-height: 285px;
     background-color: white;
-    background-image: url("../img/me/section_howIWork/sidebarIcons/sidebar-background-code-snippet.png");
+    /* background-image: url("../img/me/section_howIWork/sidebarIcons/sidebar-background-code-snippet.png"); */
     background-repeat: no-repeat;
     transition: transform .2s linear, filter .4s linear;
+    border-radius: .5rem;
+}
+#sBar-responsive .sidebar-background {
+    background-image: url("../img/planning-phase-sidebar/background-images/bg_responsive.png");
+    background-size: 100% 100%;
+}
+#sBar-colors .sidebar-background {
+    background-image: url("../img/planning-phase-sidebar/background-images/bg_colors.png");
+    background-size: 100% 100%;
+}
+#sBar-layout .sidebar-background {
+    background-image: url("../img/planning-phase-sidebar/background-images/bg_wireframes.png");
+    background-size: 100% 100%;
+    filter: blur(2px) brightness(40%);
 }
 .sidebar-card:hover .sidebar-background {
     filter: blur(0);
+}
+#sBar-layout:hover .sidebar-background {
+    filter: blur(0) brightness(40%);
 }
 .sidebar-card svg {
     display: inline;
@@ -558,4 +571,31 @@ main {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     animation: rFrame 8s linear infinite;
+}
+#responsive-frame div {
+    opacity: 1;
+    transition: opacity .3s linear;
+}
+#desktop-img-container {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 50%;
+    height: 55%;
+    background-image: url("../../img/responsive-examples/planningPhase_responsive/pic1-des.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: rFrame-desktop-img 12s linear infinite;
+
+}
+#mobile-img-container {
+    position: absolute;
+    top: 35%;
+    left: 55%;
+    width: 20%;
+    height: 60%;
+    background-image: url("../../img/responsive-examples/planningPhase_responsive/pic1-mob.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: rFrame-mobile-img 12s linear infinite;
 }

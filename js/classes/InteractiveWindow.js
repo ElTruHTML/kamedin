@@ -184,7 +184,7 @@ export class InteractiveWindow {
         pCon.setAttribute("id", "description-container");
 
             let p = document.createElement("p");
-            p.innerText = "Of course your site will look as you wish in EVERY device!";
+            p.innerText = "Of course your site will look as you wish on EVERY device!";
 
         pCon.append(p);
 
@@ -193,6 +193,15 @@ export class InteractiveWindow {
 
             let rFrame = document.createElement("div");
             rFrame.setAttribute("id", "responsive-frame");
+
+                let picDes = document.createElement("div");
+                picDes.setAttribute("id", "desktop-img-container");
+
+                let picMob = document.createElement("div");
+                picMob.setAttribute("id", "mobile-img-container");
+
+            rFrame.append(picDes);
+            rFrame.append(picMob);
             
         cCon.append(rFrame);
 
