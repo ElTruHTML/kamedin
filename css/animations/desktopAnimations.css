@@ -1,21 +1,22 @@
 
 /* changes the orange word in the header */
+
 @keyframes wordChanger {
     0% {
         transform: translateY(0);
         opacity: 1;
     }
-    10% {
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    70% {
         transform: translateY(-70%);
         opacity: 0;
     }
-    12% {
+    85% {
         transform: translateY(70%);
         opacity: 0;
-    }
-    30% {
-        transform: translateY(0);
-        opacity: 1;
     }
     100% {
         transform: translateY(0);

@@ -1,7 +1,7 @@
 "use strict";
 
 
-import {InteractiveWindow} from "./classes/InteractiveWindow.js"; 
+import {InteractiveWindow} from "./classes/InteractiveWindow.js";
 let iWin = new InteractiveWindow();
 
 //Animations to fade the headlines in:
@@ -42,18 +42,21 @@ setTimeout(() => {
     picHeader.style.opacity = "1";
 }, 300);
 //animation for changing words(BLOG, PORTFOLIO, WEBSITE):
-let wordChange = document.querySelector(".changing-headline");
+let wordChange = document.getElementById("changing-headline");
+setTimeout(() => {
+    wordChange.style.opacity = "1";
+}, 700);
 setTimeout(() => {
     wordChange.innerText = "BLOG";
-}, 680);
+}, 1500);
 setTimeout(() => {
     wordChange.innerText = "WEBSITE";
-}, 1500);
+}, 2000);
 //animation for fading in the qestionMark:
 let qmark = document.getElementById("qMark");
 setTimeout(() => {
     qmark.style.opacity = "1";
-}, 1600);
+}, 2000);
 // animation for fading in the initial infos at my picture:
 let iInfo = document.getElementById("initial-info");
 setTimeout(() => {
@@ -68,7 +71,7 @@ allLinks.forEach(l => {
         {
             //first remove orage color on every svg
             allLinks[i].classList.remove("activeLink");
-            if(i !== 4)
+            if(i !== 3)
             {
                 allLinks[i].children[0].style.fill = "#999";
             }
@@ -93,12 +96,11 @@ allLinks.forEach(l => {
     });
 });
 
+//adds the 3d-moving effect on the sidebars
 let sidebars = document.querySelectorAll(".sidebar-card");
 sidebars.forEach(card => {
     card.addEventListener("mousemove", e => {
         
-        let halfOfWidthX = e.target.clientWidth / 2;
-        let halfOfWidthY = e.target.clientHeight / 2;
         e.target.style.transform = `rotateY(${_computeXRotation(e.offsetX, e.target.clientWidth)}deg) rotateX(${_computeYRotation(e.offsetY, e.target.clientHeight)}deg)`;
         
     });
@@ -135,5 +137,81 @@ function _computeYRotation(e_offset, e_height) {
 
 
 //set the eventListeners of sidebar-menues:
-
 iWin.setListeners();
+
+let anzeige = document.getElementById("anzeigetafel");
+
+let whoami = document.querySelector("#who-am-i .card");
+let whoamip3Wrapper = document.querySelector("#who-am-i .picture-3d-wrapper");
+let pPhase = document.querySelector("#planning-phase .card");
+let pPhasep3Wrapper = document.querySelector("#planning-phase .picture-3d-wrapper");
+let wPhase = document.querySelector("#working-phase .card");
+let wPhaseSidebar = document.querySelector("#working-phase-sidebar");
+let tStack = document.querySelector("#tech-stack .card");
+
+let backBtn = document.getElementById("back-to-start");
+
+document.addEventListener("scroll" , () => {
+
+
+    let whoamiTop = whoami.getBoundingClientRect().top;
+    let pPhaseTop = pPhase.getBoundingClientRect().top;
+    let wPhaseTop = wPhase.getBoundingClientRect().top;
+    let tStackTop = tStack.getBoundingClientRect().top;
+
+
+    if(window.scrollY > 940)
+    {
+        backBtn.style.pointerEvents = "auto";
+        backBtn.style.opacity = "1";
+        backBtn.style.cursor = "pointer";
+        backBtn.addEventListener("click" , () => {
+            window.scroll(0,0);
+        });
+        if(window.scrollY < 1800)
+        {
+            backBtn.style.transform = "translateX(-50%)";
+        }
+        else if(window.scrollY > 2340 && window.scrollY < 2830)
+        {
+            backBtn.style.transform = "translateX(-400%)";
+        }
+        else if(window.scrollY > 2830)
+        {
+            backBtn.style.transform = "translateX(-50%)";
+        }
+    }
+    else if (window.scrollY < 940)
+    {
+        backBtn.style.pointerEvents = "none";
+        backBtn.style.opacity = "0";
+        backBtn.style.cursor = "unset";
+    }
+    if(whoamiTop < 400)
+    {
+        whoami.style.transform = "translateX(0)";
+        whoami.style.opacity = "1";
+        whoamip3Wrapper.style.opacity = "1";
+        whoamip3Wrapper.style.transform = "translateX(0)";
+    }
+    if(pPhaseTop < 400)
+    {
+        pPhase.style.transform = "translateX(0)";
+        pPhase.style.opacity = "1";
+        pPhasep3Wrapper.style.opacity = "1";
+        pPhasep3Wrapper.style.transform = "translateX(0)";
+    }
+    if(wPhaseTop < 400)
+    {
+        wPhase.style.transform = "translateX(0)";
+        wPhase.style.opacity = "1";
+        wPhaseSidebar.style.opacity = "1";
+        wPhaseSidebar.style.transform = "translateX(0)";
+    }
+    if(tStackTop < 400)
+    {
+        tStack.style.opacity = "1";
+    }
+
+    anzeige.innerText = `ScrollY = ${window.scrollY}\nWhoAmI Top = ${whoamiTop}\npPhaseTop = ${pPhaseTop}\nwPhase Top = ${wPhaseTop}`;
+});

@@ -1,6 +1,6 @@
 
 //this class solely manages the behavior of the interactive Window withing the
-//#planning-phase container
+//#working-phase container
 
 export class InteractiveWindow {
     constructor() {
@@ -8,7 +8,7 @@ export class InteractiveWindow {
         this.sbItemColors = document.getElementById("sBar-colors");
         this.sbItemResponsive = document.getElementById("sBar-responsive");
 
-        this.cardText = document.querySelector("#planning-phase .card-body p");
+        this.cardText = document.querySelector("#working-phase .card-body p");
         this.cardTextVisible = true;
 
         this.iWindow = document.getElementById("interactive-window");
