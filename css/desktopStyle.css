@@ -48,14 +48,17 @@ html {
 body {
     width: 100vw;
     font-family: "Ebrima", sans-serif;
+    overflow-x: hidden;
 }
 .headline-gradients {
     background-image: var(--headline-gradients);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    pointer-events: none;
 }
 #last-headline {
-    display: inline;
+    display: inline-block;
+    margin-right: 1%;
 }
 header {
     background-image: radial-gradient(at 80% 80%, var(--secon), var(--prim));
@@ -71,6 +74,7 @@ header {
     transform: translateY(-50%);
     width: 100%;
     height: 70%;
+    pointer-events: none;
 }
 #header-headlines h1 {
     font-size: clamp(60px, 6vmax, 70px);
@@ -82,6 +86,7 @@ header {
     opacity: 0;
     transition: transform .3s ease-out, opacity 1s linear;
     transform: translateX(-100px);
+    pointer-events: none;
 }
 #header-headlines h1:nth-child(2) {
     opacity: 0;
@@ -93,7 +98,7 @@ header {
     transition: transform .5s ease-out, opacity 1s linear;
     transform: translateX(-100px);
 }
-#header-headlines h1:last-child {
+#header-headlines h1:nth-child(4) {
     opacity: 0;
     transition: transform .6s ease-out, opacity 1s linear;
     transform: translateX(-100px);
@@ -103,12 +108,16 @@ header {
     background-image: none !important;
     font-weight: bold;
 }
-.changing-headline {
+#changing-headline {
+    opacity: 0;
     display: inline-block;
     font-size: clamp(60px, 6vmax, 70px);
-    transition: transform .5s linear;
+    font-weight: bold;
+    transition: transform .5s linear,
+                opacity .3s linear;
     transform: translateY(0);
-    animation: wordChanger .8s linear .6s 2;
+    animation: wordChanger .6s linear 1s 2;
+    color: var(--tert1) !important;
 }
 #qMark {
     opacity: 0;
@@ -236,10 +245,6 @@ section.container {
     margin-bottom: 100px;
     scroll-margin-top: 150px;
 }
-#how-i-work {
-    scroll-margin-top: 150px;
-    margin-bottom: 200px;
-}
 main {
     padding-top: 150px;
     font-family: "Raleway" !important;
@@ -252,6 +257,10 @@ main {
     padding-bottom: 50px;
     box-shadow: -5px 5px 10px rgba(173, 107, 53, .5);
     font-size: 1.3rem;
+    transform: translateX(40%);
+    opacity: 0;
+    transition: opacity .6s ease-out,
+                transform .6s ease-out;
 }
 .card-headline {
     position: relative;
@@ -292,6 +301,12 @@ main {
     position: relative;
     perspective: 1000px;
     transform-style: preserve-3d;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all .6s ease-in;
+}
+#who-am-i {
+    margin-bottom: 150px;
 }
 #pic-3d-who-am-i img{
     width: 70%;
@@ -314,7 +329,7 @@ main {
     }
 }
 #pic-3d-how-i-work img{
-    width: 150%;
+    width: 120%;
     position: absolute;
     top: 0;
     left: 0;
@@ -343,17 +358,24 @@ main {
     align-items: center;
 }
 #planning-phase {
-    scroll-margin-top: 200px;
+    margin-bottom: 150px;
 }
-#planning-phase .card {
+#working-phase {
+    scroll-margin-top: 200px;
+    margin-bottom: 250px;
+}
+#working-phase .card {
     min-height: 700px;
 }
-#planning-phase-sidebar {
+#working-phase-sidebar {
     width: 40%;
     min-height: 600px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: all .6s ease-in;
+    opacity: 0;
+    transform: translateX(-80%);
 }
 .sidebar-card-container {
     width: 30%;
@@ -437,10 +459,10 @@ main {
 .sidebar-card:hover p {
     transform: translateX(-50%) translateY(150%) translateZ(45px);
 }
-#planning-phase .card {
+#working-phase .card {
     position: relative;
 }
-#planning-phase .card-body p {
+#working-phase .card-body p {
     opacity: 1;
     transition: opacity .2s linear;
 }
@@ -598,4 +620,63 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     animation: rFrame-mobile-img 12s linear infinite;
+}
+#tech-stack {
+    margin-bottom: 300px;
+}
+#tech-stack .card {
+    width: 100%;
+    transform: translateX(0);
+}
+#tech-stack .card .card-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10%;
+}
+.tStack-item {
+    width: 40%;
+    min-width: 420px;
+    height: 10%;
+    min-height: 50px;
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5%;
+}
+.tStack-item svg {
+    margin-left: 10%;
+}
+#anzeigetafel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 200px;
+    background-color: rgba(255,255,255,.5);
+    text-align: center;
+    padding: 10px;
+    z-index: 10;
+    color: black;
+}
+#back-to-start {
+    position: fixed;
+    left: 50%;
+    bottom: 2%;
+    transform: translateX(-50%);
+    border: 2px solid var(--tert1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .2s ease-in;
+}
+#back-to-start svg {
+    transform: scale(2);
+}
+#back-to-start svg path {
+    fill: var(--tert1);
 }
