@@ -139,8 +139,7 @@ function _computeYRotation(e_offset, e_height) {
 //set the eventListeners of sidebar-menues:
 iWin.setListeners();
 
-let anzeige = document.getElementById("anzeigetafel");
-
+//makes the sections of the side appear when scrolled at:
 let whoami = document.querySelector("#who-am-i .card");
 let whoamip3Wrapper = document.querySelector("#who-am-i .picture-3d-wrapper");
 let pPhase = document.querySelector("#planning-phase .card");
@@ -153,39 +152,53 @@ let backBtn = document.getElementById("back-to-start");
 
 document.addEventListener("scroll" , () => {
 
-
+    let sy = window.scrollY;
     let whoamiTop = whoami.getBoundingClientRect().top;
     let pPhaseTop = pPhase.getBoundingClientRect().top;
     let wPhaseTop = wPhase.getBoundingClientRect().top;
     let tStackTop = tStack.getBoundingClientRect().top;
 
 
-    if(window.scrollY > 940)
+    console.clear();
+    console.log(sy);
+    console.log("iWi", innerWidth);
+    if(innerWidth > 1919)
     {
-        backBtn.style.pointerEvents = "auto";
-        backBtn.style.opacity = "1";
-        backBtn.style.cursor = "pointer";
-        backBtn.addEventListener("click" , () => {
-            window.scroll(0,0);
-        });
-        if(window.scrollY < 1800)
-        {
-            backBtn.style.transform = "translateX(-50%)";
-        }
-        else if(window.scrollY > 2340 && window.scrollY < 2830)
-        {
-            backBtn.style.transform = "translateX(-400%)";
-        }
-        else if(window.scrollY > 2830)
-        {
-            backBtn.style.transform = "translateX(-50%)";
-        }
+        console.log("iWi größer 1919");
+        if(window.scrollY > 940)
+            {
+                backBtn.style.pointerEvents = "auto";
+                backBtn.style.opacity = "1";
+                backBtn.style.cursor = "pointer";
+                backBtn.addEventListener("click" , () => {
+                    window.scroll(0,0);
+                });
+            }
+            else if (window.scrollY < 940)
+            {
+                backBtn.style.pointerEvents = "none";
+                backBtn.style.opacity = "0";
+                backBtn.style.cursor = "unset";
+            }
     }
-    else if (window.scrollY < 940)
+    else if(innerWidth > 1535 && innerWidth < 1929)
     {
-        backBtn.style.pointerEvents = "none";
-        backBtn.style.opacity = "0";
-        backBtn.style.cursor = "unset";
+        console.log("iWi zw. 1535 u 1920");
+        if(window.scrollY > 775)
+            {
+                backBtn.style.pointerEvents = "auto";
+                backBtn.style.opacity = "1";
+                backBtn.style.cursor = "pointer";
+                backBtn.addEventListener("click" , () => {
+                    window.scroll(0,0);
+                });
+            }
+            else if (window.scrollY < 775)
+            {
+                backBtn.style.pointerEvents = "none";
+                backBtn.style.opacity = "0";
+                backBtn.style.cursor = "unset";
+            }
     }
     if(whoamiTop < 400)
     {
@@ -212,6 +225,4 @@ document.addEventListener("scroll" , () => {
     {
         tStack.style.opacity = "1";
     }
-
-    anzeige.innerText = `ScrollY = ${window.scrollY}\nWhoAmI Top = ${whoamiTop}\npPhaseTop = ${pPhaseTop}\nwPhase Top = ${wPhaseTop}`;
 });
