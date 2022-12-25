@@ -233,7 +233,6 @@ a:focus svg {
     color: var(--tert1);
 }
 .container {
-    /* border: 1px solid red; */
     display: flex;
     align-items: center;
 }
@@ -243,7 +242,7 @@ section.container {
     align-items: center;
     font-family: "Raleway" !important;
     margin-bottom: 100px;
-    scroll-margin-top: 150px;
+    scroll-margin-top: 100px;
 }
 main {
     padding-top: 150px;
@@ -256,7 +255,7 @@ main {
     background-color: var(--secon);
     padding-bottom: 50px;
     box-shadow: -5px 5px 10px rgba(173, 107, 53, .5);
-    font-size: 1.3rem;
+    font-size: 1rem;
     transform: translateX(40%);
     opacity: 0;
     transition: opacity .6s ease-out,
@@ -311,7 +310,7 @@ main {
 #pic-3d-who-am-i img{
     width: 70%;
     position: absolute;
-    top: -35%;
+    top: -15%;
     left: 20%;
     transform: rotateY(5deg) translateY(0);
     animation: hoverMe 3s linear infinite;
@@ -331,8 +330,8 @@ main {
 #pic-3d-how-i-work img{
     width: 120%;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10%;
+    left: 5%;
     transform: rotateY(50deg) translateY(0) translateX(-10%);
     animation: hoverWork 3s linear infinite;
 }
@@ -360,10 +359,6 @@ main {
 #planning-phase {
     margin-bottom: 150px;
 }
-#working-phase {
-    scroll-margin-top: 200px;
-    margin-bottom: 250px;
-}
 #working-phase-sidebar {
     width: 40%;
     min-height: 600px;
@@ -376,18 +371,17 @@ main {
 }
 .sidebar-card-container {
     width: 30%;
-    min-height: 300px;
+    min-height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     perspective: 1000px;
     transform-style: preserve-3d;
     pointer-events: none;
-
 }
 .sidebar-card {
     width: 90%;
-    min-height: 285px;
+    min-height: 185px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -397,15 +391,13 @@ main {
     cursor: pointer;
     border-radius: .5rem;
     transform-style: preserve-3d;
-    /* border: 1px solid var(--textColor); */
 }
 .sidebar-background {
     filter: blur(2px);
     pointer-events: none;
     width: 100%;
-    min-height: 285px;
+    min-height: 185px;
     background-color: white;
-    /* background-image: url("../img/me/section_howIWork/sidebarIcons/sidebar-background-code-snippet.png"); */
     background-repeat: no-repeat;
     transition: transform .2s linear, filter .4s linear;
     border-radius: .5rem;
@@ -456,9 +448,13 @@ main {
 .sidebar-card:hover p {
     transform: translateX(-50%) translateY(150%) translateZ(45px);
 }
+#working-phase {
+    scroll-margin-top: 50px;
+    margin-bottom: 250px;
+}
 #working-phase .card {
     position: relative;
-    min-height: 600px;
+    min-height: 500px;
 }
 #working-phase .card-body p {
     opacity: 1;
@@ -468,7 +464,7 @@ main {
     position: absolute;
     bottom: 1%;
     left: 1%;
-    width: 98%;
+    width: 90%;
     height: 85%;
     border: 2px solid var(--textColor);
     border-radius: .5rem;
@@ -477,7 +473,6 @@ main {
     transition: all .3s ease-out;
 }
 .iWin-layout {
-    /* flex-wrap: wrap; */
     flex-direction: column;
 }
 #description-container {
@@ -620,7 +615,7 @@ main {
     animation: rFrame-mobile-img 12s linear infinite;
 }
 #tech-stack {
-    margin-bottom: 300px;
+    margin-bottom: 150px;
 }
 #tech-stack .card {
     width: 100%;

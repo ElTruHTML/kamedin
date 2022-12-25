@@ -1,5 +1,5 @@
 
-//this class solely manages the behavior of the interactive Window withing the
+//this class solely manages the behavior of the interactive Window within the
 //#working-phase container
 
 export class InteractiveWindow {
@@ -208,16 +208,6 @@ export class InteractiveWindow {
         this.iWindow.append(pCon);
         this.iWindow.append(cCon);
     }
-
-
-
-
-
-
-
-
-
-
     _fadeOutCardText() {
         if(this.cardTextVisible === true)
         {
@@ -245,7 +235,16 @@ export class InteractiveWindow {
         this.iWindow.style.left = "50%";
     }
     _openIWIN() {
-        this.iWindow.style.width = "98%";
-        this.iWindow.style.left = "1%";
+        if(innerWidth > 1919)
+        {
+            this.iWindow.style.width = "98%";
+            this.iWindow.style.left = "1%";
+        }
+        else if(innerWidth > 1535 && innerWidth < 1920)
+        {
+            this.iWindow.style.width = "90%";
+            this.iWindow.style.left = "5%";
+        }
+        
     }
 }
