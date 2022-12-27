@@ -4,6 +4,9 @@
 import {InteractiveWindow} from "./classes/InteractiveWindow.js";
 let iWin = new InteractiveWindow();
 
+
+
+
 //Animations to fade the headlines in:
 let headlines = document.querySelectorAll("#header-headlines h1");
 for(let i = 0 ; i < headlines.length ; i++)
@@ -152,19 +155,13 @@ let backBtn = document.getElementById("back-to-start");
 
 document.addEventListener("scroll" , () => {
 
-    let sy = window.scrollY;
     let whoamiTop = whoami.getBoundingClientRect().top;
     let pPhaseTop = pPhase.getBoundingClientRect().top;
     let wPhaseTop = wPhase.getBoundingClientRect().top;
     let tStackTop = tStack.getBoundingClientRect().top;
 
-
-    console.clear();
-    console.log(sy);
-    console.log("iWi", innerWidth);
-    if(innerWidth > 1919)
+    if(innerWidth > 1536)
     {
-        console.log("iWi größer 1919");
         if(window.scrollY > 940)
             {
                 backBtn.style.pointerEvents = "auto";
@@ -181,10 +178,9 @@ document.addEventListener("scroll" , () => {
                 backBtn.style.cursor = "unset";
             }
     }
-    else if(innerWidth > 1535 && innerWidth < 1929)
+    else if(innerWidth > 1281 && innerWidth <= 1536)
     {
-        console.log("iWi zw. 1535 u 1920");
-        if(window.scrollY > 775)
+        if(window.scrollY > 700)
             {
                 backBtn.style.pointerEvents = "auto";
                 backBtn.style.opacity = "1";
@@ -193,36 +189,158 @@ document.addEventListener("scroll" , () => {
                     window.scroll(0,0);
                 });
             }
-            else if (window.scrollY < 775)
+            else if (window.scrollY < 700)
             {
                 backBtn.style.pointerEvents = "none";
                 backBtn.style.opacity = "0";
                 backBtn.style.cursor = "unset";
             }
     }
-    if(whoamiTop < 400)
+    else if(innerWidth > 800 && innerWidth <= 1281)
+    {
+        let nav = document.querySelector("nav");
+
+        if(scrollY >= 580)
+        {
+            nav.style.position = "fixed";
+        }
+        else if(scrollY <580)
+        {
+            nav.style.position = "static";
+        }
+        if(window.scrollY > 450)
+            {
+                backBtn.style.pointerEvents = "auto";
+                backBtn.style.opacity = "1";
+                backBtn.style.cursor = "pointer";
+                backBtn.addEventListener("click" , () => {
+                    window.scroll(0,0);
+                });
+            }
+            else if (window.scrollY < 450)
+            {
+                backBtn.style.pointerEvents = "none";
+                backBtn.style.opacity = "0";
+                backBtn.style.cursor = "unset";
+            }
+    }
+    else if(innerWidth > 700 && innerWidth <= 800)
+    {
+        let nav = document.querySelector("nav");
+
+        if(scrollY >= 950)
+        {
+            nav.style.position = "fixed";
+        }
+        else if(scrollY <950)
+        {
+            nav.style.position = "static";
+        }
+        if(window.scrollY > 450)
+            {
+                backBtn.style.pointerEvents = "auto";
+                backBtn.style.opacity = "1";
+                backBtn.style.cursor = "pointer";
+                backBtn.addEventListener("click" , () => {
+                    window.scroll(0,0);
+                });
+            }
+            else if (window.scrollY < 450)
+            {
+                backBtn.style.pointerEvents = "none";
+                backBtn.style.opacity = "0";
+                backBtn.style.cursor = "unset";
+            }
+    }
+    else if(innerWidth > 1 && innerWidth <= 700)
+    {
+        let nav = document.querySelector("nav");
+
+        if(scrollY >= 500)
+        {
+            nav.style.position = "fixed";
+        }
+        else if(scrollY <500)
+        {
+            nav.style.position = "static";
+        }
+        if(window.scrollY > 450)
+            {
+                backBtn.style.pointerEvents = "auto";
+                backBtn.style.opacity = "1";
+                backBtn.style.cursor = "pointer";
+                backBtn.addEventListener("click" , () => {
+                    window.scroll(0,0);
+                });
+            }
+            else if (window.scrollY < 450)
+            {
+                backBtn.style.pointerEvents = "none";
+                backBtn.style.opacity = "0";
+                backBtn.style.cursor = "unset";
+            }
+    }
+    if(whoamiTop < 400 && innerWidth > 800)
     {
         whoami.style.transform = "translateX(0)";
         whoami.style.opacity = "1";
         whoamip3Wrapper.style.opacity = "1";
         whoamip3Wrapper.style.transform = "translateX(0)";
     }
-    if(pPhaseTop < 400)
+    if(pPhaseTop < 400 && innerWidth > 800)
     {
         pPhase.style.transform = "translateX(0)";
         pPhase.style.opacity = "1";
         pPhasep3Wrapper.style.opacity = "1";
         pPhasep3Wrapper.style.transform = "translateX(0)";
     }
-    if(wPhaseTop < 400)
+    if(wPhaseTop < 400 && innerWidth > 800)
     {
         wPhase.style.transform = "translateX(0)";
         wPhase.style.opacity = "1";
         wPhaseSidebar.style.opacity = "1";
         wPhaseSidebar.style.transform = "translateX(0)";
     }
-    if(tStackTop < 400)
+    if(tStackTop < 700 && innerWidth > 800)
     {
         tStack.style.opacity = "1";
     }
+
+
+    if(whoamiTop < 700 && innerWidth <= 800)
+    {
+        whoami.style.transform = "translateX(0)";
+        whoami.style.opacity = "1";
+        whoamip3Wrapper.style.opacity = "1";
+        whoamip3Wrapper.style.transform = "translateX(0)";
+    }
+    if(pPhaseTop < 700 && innerWidth <= 800)
+    {
+        pPhase.style.transform = "translateX(0)";
+        pPhase.style.opacity = "1";
+        pPhasep3Wrapper.style.opacity = "1";
+        pPhasep3Wrapper.style.transform = "translateX(0)";
+    }
+    if(wPhaseTop < 700 && innerWidth <= 800)
+    {
+        wPhase.style.transform = "translateX(0)";
+        wPhase.style.opacity = "1";
+        wPhaseSidebar.style.opacity = "1";
+        wPhaseSidebar.style.transform = "translateX(0)";
+    }
+    if(tStackTop < 700 && innerWidth <= 800)
+    {
+        tStack.style.opacity = "1";
+    }
+    
 });
+
+//deleting some DON Elements, when viewport is less than 800px wide:
+if(innerWidth <=800 )
+{
+    let cfContent = document.getElementById("circle-frame-content");
+    cfContent.remove();
+    let picMe = document.getElementById("pic-me");
+    picMe.removeAttribute("src");
+    picMe.setAttribute("src" , "../img/me/portfolio-profile-S-mobile-size-responsive.png");
+}

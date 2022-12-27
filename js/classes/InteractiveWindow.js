@@ -235,15 +235,20 @@ export class InteractiveWindow {
         this.iWindow.style.left = "50%";
     }
     _openIWIN() {
-        if(innerWidth > 1919)
+        if(innerWidth > 1536)
         {
             this.iWindow.style.width = "98%";
             this.iWindow.style.left = "1%";
         }
-        else if(innerWidth > 1535 && innerWidth < 1920)
+        else if(innerWidth > 1281 && innerWidth < 1536)
         {
             this.iWindow.style.width = "90%";
             this.iWindow.style.left = "5%";
+        }
+        else if(innerWidth > 1 && innerWidth < 1281)
+        {
+            this.iWindow.style.width = "84%";
+            this.iWindow.style.left = "8%";
         }
         
     }
