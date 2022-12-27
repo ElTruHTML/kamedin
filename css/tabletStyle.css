@@ -63,7 +63,8 @@ body {
     margin-right: 1%;
 }
 header {
-    background-image: radial-gradient(at 80% 80%, var(--secon), var(--prim));
+    /* background-image: radial-gradient(at 80% 80%, var(--secon), var(--prim)); */
+    background-color: red;
     position: relative;
     height: 90vh;
     min-height: 500px;

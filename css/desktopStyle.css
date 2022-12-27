@@ -51,7 +51,9 @@ body {
     overflow-x: hidden;
 }
 .headline-gradients {
+    -webkit-background-image: var(--headline-gradients);
     background-image: var(--headline-gradients);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     pointer-events: none;
